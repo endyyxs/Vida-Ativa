@@ -1,0 +1,74 @@
+:root {
+  --primary-color: #0284c7;    /* Azul visível */
+  --success-color: #16a34a;    /* Verde para botões de ação */
+  --error-color: #dc2626;      /* Vermelho de alerta */
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;       /* Texto quase preto para contraste máximo */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 18px; /* Fonte aumentada para melhor legibilidade */
+}
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--text-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.btn-success { background-color: var(--success-color); }
+.error-msg { color: var(--error-color); font-weight: bold; margin-top: 10px; text-align: center;}
+.success-msg { color: var(--success-color); font-weight: bold; margin-top: 10px; text-align: center;}
