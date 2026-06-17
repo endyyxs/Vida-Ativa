@@ -39,17 +39,17 @@ export default function CadastroExercicio() {
       <form onSubmit={handleSalvarExercicio}>
         <div className="form-group">
           <label>Nome do Exercício:</label>
-          <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} required />
+          <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} id='nome' required />
         </div>
 
         <div className="form-group">
           <label>Descrição / Instruções:</label>
-          <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} required />
+          <textarea value={descricao} onChange={(e) => setDescricao(e.target.value)} id='descricao'required />
         </div>
 
         <div className="form-group">
           <label>Dificuldade:</label>
-          <select value={dificuldade} onChange={(e) => setDificuldade(e.target.value)}>
+          <select value={dificuldade} onChange={(e) => setDificuldade(e.target.value)} id='dificuldade'>
             <option value="FACIL">🟢 Fácil</option>
             <option value="MODERADO">🟡 Moderado</option>
             <option value="DIFICIL">🔴 Difícil</option>
@@ -66,7 +66,7 @@ export default function CadastroExercicio() {
           <input type="url" value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} placeholder="https://..." />
         </div>
 
-        <button type="submit" className="btn-success">Salvar Exercício</button>
+        <button type="submit" className="btn-success" id='btnSalvar'>Salvar Exercício</button>
         
         <button 
           type="button" 

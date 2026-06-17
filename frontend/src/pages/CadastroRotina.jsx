@@ -56,17 +56,17 @@ useEffect(() => {
       <form onSubmit={handleSalvarRotina}>
         <div className="form-group">
           <label>Nome da Rotina:</label>
-          <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} required />
+          <input type="text" value={nome} onChange={(e) => setNome(e.target.value)} id='nomeRotina'required />
         </div>
 
         <div className="form-group">
           <label>Duração (10 a 30 min):</label>
-          <input type="number" value={duracao} onChange={(e) => setDuracao(e.target.value)} required />
+          <input type="number" value={duracao} onChange={(e) => setDuracao(e.target.value)} id='duracao' required />
         </div>
 
         <div className="form-group">
           <label>Perfil Clínico:</label>
-          <select value={perfilAlvo} onChange={(e) => setPerfilAlvo(e.target.value)}>
+          <select value={perfilAlvo} id='perfilClinico' onChange={(e) => setPerfilAlvo(e.target.value)}>
             <option value="SEDENTARIO">Sedentário</option>
             <option value="ATIVO_LEVE">Ativo Leve</option>
           </select>
@@ -82,6 +82,7 @@ useEffect(() => {
                   type="checkbox" 
                   checked={exerciciosSelecionados.includes(ex.id)}
                   onChange={() => handleCheckboxChange(ex.id)}
+                  id='ArrayExercicio'
                 />
                 {ex.nome}
               </label>
@@ -89,7 +90,7 @@ useEffect(() => {
           </div>
         </div>
 
-        <button type="submit">Salvar Composição</button>
+        <button type="submit" id='btnSalvar'>Salvar Composição</button>
         <button type="button" style={{ marginTop: '10px', backgroundColor: '#64748b' }} onClick={() => navigate('/admin/rotinas')}>
           Cancelar
         </button>

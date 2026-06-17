@@ -27,7 +27,7 @@ function App() {
     <BrowserRouter>
       {usuario && (
         <nav style={{ backgroundColor: '#0f172a', padding: '15px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'white' }}>
-          <span style={{ fontWeight: 'bold', fontSize: '20px' }}>Vida Ativa 💪</span>
+          <span style={{ fontWeight: 'bold', fontSize: '20px' }} id='nomeApp'>Vida Ativa 💪</span>
           <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
             <Link to="/dashboard" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold' }}>Início</Link>
             
@@ -37,8 +37,8 @@ function App() {
             
             {usuario.tipo === 'PROFISSIONAL' && (
               <>
-                <Link to="/admin/exercicios" style={{ color: '#38bdf8', textDecoration: 'none' }}>Exercícios</Link>
-                <Link to="/admin/rotinas" style={{ color: '#38bdf8', textDecoration: 'none' }}>Rotinas</Link>
+                <Link to="/admin/exercicios" style={{ color: '#38bdf8', textDecoration: 'none' }} id='exercicio'>Exercícios</Link>
+                <Link to="/admin/rotinas" style={{ color: '#38bdf8', textDecoration: 'none' }} id='rotina'>Rotinas</Link>
               </>
             )}
 

@@ -49,7 +49,7 @@ export default function Login({ onLoginSuccess }) {
           />
         </div>
 
-        <button type="submit" className="btn-success">Entrar</button>
+        <button type="submit" className="btn-success" id='btnlogin'>Entrar</button>
 
         <p style={{ marginTop: '20px', fontSize: '15px', color: '#64748b', textAlign: 'center' }}>
           Não tem uma conta?{' '}

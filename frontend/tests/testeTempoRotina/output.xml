@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-06-17T20:14:09.569632" rpa="false" schemaversion="5">
+<suite id="s1" name="Cadastro Rotina" source="C:\Users\dougl\Documents\docs faculdade\7 semestre\testes\Projeto\frontend\tests\testeTempoRotina\cadastro_rotina.robot">
+<kw name="Logar no Sistema com Sucesso" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:09.876064" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--incognito")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-17T20:14:09.860170" elapsed="2.218446"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-17T20:14:12.078616" elapsed="0.046486"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.3 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-06-17T20:14:12.125102" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:12.125102" elapsed="0.644837"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:12.769939" level="INFO">Typing text 'dsimoess@teste.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>dsimoess@teste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:12.769939" elapsed="1.028964"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:13.798903" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-17T20:14:14.423453" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>123456789</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:13.798903" elapsed="0.960990"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:14.759893" elapsed="0.614538"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:15.374431" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:15.374431" elapsed="1.563718"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=nomeApp</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:16.938149" elapsed="1.626887"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:09.860170" elapsed="8.704866"/>
+</kw>
+<test id="s1-t1" name="CT01 - Deve realizar o cadastro da rotina com tempo de duracao valido no limite maximo" line="32">
+<kw name="Acessar a pagina de cadastro de rotinas" type="SETUP">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:18.871626" level="INFO">${PAST_URL} = http://localhost:5173/admin/home</msg>
+<var>${PAST_URL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-17T20:14:18.565036" elapsed="0.306590"/>
+</kw>
+<if>
+<branch type="IF" condition="'${PAST_URL}' != '${URL_ROTINA}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=rotina</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:18.871626" elapsed="0.615258"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:19.486884" level="INFO">Clicking element 'id=rotina'.</msg>
+<arg>id=rotina</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:19.486884" elapsed="0.646272"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=btnRotina</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:20.133156" elapsed="0.614592"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:20.747748" level="INFO">Clicking element 'id=btnRotina'.</msg>
+<arg>id=btnRotina</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:20.747748" elapsed="0.640323"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:18.871626" elapsed="2.516445"/>
+</branch>
+<status status="PASS" start="2026-06-17T20:14:18.871626" elapsed="2.516841"/>
+</if>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:21.388467" elapsed="0.613361"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:18.565036" elapsed="3.436792"/>
+</kw>
+<kw name="Dado que o administrador informa o nome da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:22.001828" elapsed="0.612471"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:22.614299" elapsed="0.631396"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:23.245695" level="INFO">Typing text 'Alongamento Idoso Ativo' into text field 'id=nomeRotina'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:23.245695" elapsed="0.992130"/>
+</kw>
+<arg>Alongamento Idoso Ativo</arg>
+<status status="PASS" start="2026-06-17T20:14:22.001828" elapsed="2.235997"/>
+</kw>
+<kw name="E informa a duracao total da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_DURACAO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:24.237825" elapsed="0.613410"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_DURACAO}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:24.851235" elapsed="0.624404"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:25.475639" level="INFO">Typing text '30' into text field 'id=duracao'.</msg>
+<arg>${INPUT_DURACAO}</arg>
+<arg>${duracao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:25.475639" elapsed="0.947035"/>
+</kw>
+<arg>30</arg>
+<status status="PASS" start="2026-06-17T20:14:24.237825" elapsed="2.184849"/>
+</kw>
+<kw name="E seleciona o exercicio de numero">
+<kw name="Replace String" owner="String">
+<msg time="2026-06-17T20:14:26.422674" level="INFO">${REAL_LOCATOR} = xpath=(//input[@type="checkbox" or @name="arrayExercicio"])[1]</msg>
+<var>${REAL_LOCATOR}</var>
+<arg>${XPATH_CHECKBOX}</arg>
+<arg>{INDEX}</arg>
+<arg>${posicao}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-06-17T20:14:26.422674" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REAL_LOCATOR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:26.422674" elapsed="0.618484"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:27.041158" level="INFO">Clicking element 'xpath=(//input[@type="checkbox" or @name="arrayExercicio"])[1]'.</msg>
+<arg>${REAL_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:27.041158" elapsed="0.640911"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2026-06-17T20:14:26.422674" elapsed="1.259395"/>
+</kw>
+<kw name="E seleciona o exercicio de numero">
+<kw name="Replace String" owner="String">
+<msg time="2026-06-17T20:14:27.682069" level="INFO">${REAL_LOCATOR} = xpath=(//input[@type="checkbox" or @name="arrayExercicio"])[2]</msg>
+<var>${REAL_LOCATOR}</var>
+<arg>${XPATH_CHECKBOX}</arg>
+<arg>{INDEX}</arg>
+<arg>${posicao}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-06-17T20:14:27.682069" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REAL_LOCATOR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:27.682069" elapsed="0.615433"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:28.297502" level="INFO">Clicking element 'xpath=(//input[@type="checkbox" or @name="arrayExercicio"])[2]'.</msg>
+<arg>${REAL_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:28.297502" elapsed="0.641228"/>
+</kw>
+<arg>2</arg>
+<status status="PASS" start="2026-06-17T20:14:27.682069" elapsed="1.256661"/>
+</kw>
+<kw name="Quando solicitar o salvamento da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_SALVAR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:28.938730" elapsed="0.614494"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:29.553224" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:29.553224" elapsed="1.552972"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:28.938730" elapsed="2.167466"/>
+</kw>
+<kw name="Entao o sistema deve redirecionar para a listagem de rotinas">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LISTA_ROTINAS}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:31.106196" elapsed="1.119902"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:31.106196" elapsed="1.119902"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:18.565036" elapsed="13.661062"/>
+</test>
+<test id="s1-t2" name="CT02 - Deve realizar o cadastro da rotina com tempo de duracao valido no limite minimo" line="40">
+<kw name="Acessar a pagina de cadastro de rotinas" type="SETUP">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:32.531431" level="INFO">${PAST_URL} = http://localhost:5173/admin/rotinas</msg>
+<var>${PAST_URL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-17T20:14:32.227616" elapsed="0.303815"/>
+</kw>
+<if>
+<branch type="IF" condition="'${PAST_URL}' != '${URL_ROTINA}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=rotina</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:32.531431" elapsed="0.611520"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:33.142951" level="INFO">Clicking element 'id=rotina'.</msg>
+<arg>id=rotina</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:33.142951" elapsed="0.641993"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=btnRotina</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:33.784944" elapsed="0.627589"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:34.412533" level="INFO">Clicking element 'id=btnRotina'.</msg>
+<arg>id=btnRotina</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:34.412533" elapsed="0.634069"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:32.531431" elapsed="2.515171"/>
+</branch>
+<status status="PASS" start="2026-06-17T20:14:32.531431" elapsed="2.515171"/>
+</if>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:35.046602" elapsed="0.613153"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:32.226098" elapsed="3.433657"/>
+</kw>
+<kw name="Dado que o administrador informa o nome da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:35.659755" elapsed="0.611720"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:36.271475" elapsed="0.619630"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:36.891105" level="INFO">Typing text 'Alongamento Idoso Ativo' into text field 'id=nomeRotina'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:36.891105" elapsed="0.984638"/>
+</kw>
+<arg>Alongamento Idoso Ativo</arg>
+<status status="PASS" start="2026-06-17T20:14:35.659755" elapsed="2.215988"/>
+</kw>
+<kw name="E informa a duracao total da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_DURACAO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:37.875743" elapsed="0.611446"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_DURACAO}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:38.487189" elapsed="0.621379"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:39.108568" level="INFO">Typing text '10' into text field 'id=duracao'.</msg>
+<arg>${INPUT_DURACAO}</arg>
+<arg>${duracao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:39.108568" elapsed="0.951046"/>
+</kw>
+<arg>10</arg>
+<status status="PASS" start="2026-06-17T20:14:37.875743" elapsed="2.183871"/>
+</kw>
+<kw name="E seleciona o exercicio de numero">
+<kw name="Replace String" owner="String">
+<msg time="2026-06-17T20:14:40.059614" level="INFO">${REAL_LOCATOR} = xpath=(//input[@type="checkbox" or @name="arrayExercicio"])[1]</msg>
+<var>${REAL_LOCATOR}</var>
+<arg>${XPATH_CHECKBOX}</arg>
+<arg>{INDEX}</arg>
+<arg>${posicao}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-06-17T20:14:40.059614" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REAL_LOCATOR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:40.059614" elapsed="0.612887"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:40.672501" level="INFO">Clicking element 'xpath=(//input[@type="checkbox" or @name="arrayExercicio"])[1]'.</msg>
+<arg>${REAL_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:40.672501" elapsed="0.640746"/>
+</kw>
+<arg>1</arg>
+<status status="PASS" start="2026-06-17T20:14:40.059614" elapsed="1.253633"/>
+</kw>
+<kw name="E seleciona o exercicio de numero">
+<kw name="Replace String" owner="String">
+<msg time="2026-06-17T20:14:41.313247" level="INFO">${REAL_LOCATOR} = xpath=(//input[@type="checkbox" or @name="arrayExercicio"])[2]</msg>
+<var>${REAL_LOCATOR}</var>
+<arg>${XPATH_CHECKBOX}</arg>
+<arg>{INDEX}</arg>
+<arg>${posicao}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2026-06-17T20:14:41.313247" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REAL_LOCATOR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:41.313247" elapsed="0.612986"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:41.926233" level="INFO">Clicking element 'xpath=(//input[@type="checkbox" or @name="arrayExercicio"])[2]'.</msg>
+<arg>${REAL_LOCATOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:41.926233" elapsed="0.635672"/>
+</kw>
+<arg>2</arg>
+<status status="PASS" start="2026-06-17T20:14:41.313247" elapsed="1.248658"/>
+</kw>
+<kw name="Quando solicitar o salvamento da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_SALVAR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:42.561905" elapsed="0.611026"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:43.172931" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:43.172931" elapsed="1.550756"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:42.561905" elapsed="2.161782"/>
+</kw>
+<kw name="Entao o sistema deve redirecionar para a listagem de rotinas">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LISTA_ROTINAS}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:44.723687" elapsed="1.117186"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:44.723687" elapsed="1.117186"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:32.226098" elapsed="13.614775"/>
+</test>
+<test id="s1-t3" name="CT03 - Deve reter o envio do formulario se a duracao for menor que o limite minimo" line="48">
+<kw name="Acessar a pagina de cadastro de rotinas" type="SETUP">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:46.146334" level="INFO">${PAST_URL} = http://localhost:5173/admin/rotinas</msg>
+<var>${PAST_URL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-17T20:14:45.840873" elapsed="0.305461"/>
+</kw>
+<if>
+<branch type="IF" condition="'${PAST_URL}' != '${URL_ROTINA}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=rotina</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:46.146334" elapsed="0.611700"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:46.758034" level="INFO">Clicking element 'id=rotina'.</msg>
+<arg>id=rotina</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:46.758034" elapsed="0.641311"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=btnRotina</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:47.399345" elapsed="0.610632"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:48.009977" level="INFO">Clicking element 'id=btnRotina'.</msg>
+<arg>id=btnRotina</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:48.009977" elapsed="0.657919"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:46.146334" elapsed="2.521562"/>
+</branch>
+<status status="PASS" start="2026-06-17T20:14:46.146334" elapsed="2.521562"/>
+</if>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:48.667896" elapsed="0.611461"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:45.840873" elapsed="3.438484"/>
+</kw>
+<kw name="Dado que o administrador informa o nome da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:49.279357" elapsed="0.611252"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:49.890609" elapsed="0.643006"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:50.533615" level="INFO">Typing text 'Alongamento Rapido Demais' into text field 'id=nomeRotina'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:50.533615" elapsed="1.023464"/>
+</kw>
+<arg>Alongamento Rapido Demais</arg>
+<status status="PASS" start="2026-06-17T20:14:49.279357" elapsed="2.277722"/>
+</kw>
+<kw name="E informa a duracao total da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_DURACAO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:51.557079" elapsed="0.613241"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_DURACAO}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:52.170320" elapsed="0.625485"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:52.795805" level="INFO">Typing text '9' into text field 'id=duracao'.</msg>
+<arg>${INPUT_DURACAO}</arg>
+<arg>${duracao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:52.795805" elapsed="0.945189"/>
+</kw>
+<arg>9</arg>
+<status status="PASS" start="2026-06-17T20:14:51.557079" elapsed="2.183915"/>
+</kw>
+<kw name="Quando solicitar o salvamento da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_SALVAR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:53.740994" elapsed="0.612007"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:54.353001" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:54.353001" elapsed="1.555005"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:53.740994" elapsed="2.167012"/>
+</kw>
+<kw name="Entao a interface deve reter o envio da rotina impedindo o redirecionamento">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:56.213511" level="INFO">Current location is 'http://localhost:5173/admin/rotina/nova'.</msg>
+<arg>${URL_ROTINA}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-06-17T20:14:55.908006" elapsed="0.353214"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:55.908006" elapsed="0.353214"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:45.840873" elapsed="10.420347"/>
+</test>
+<test id="s1-t4" name="CT04 - Deve reter o envio do formulario se a duracao ultrapassar o limite maximo" line="54">
+<kw name="Acessar a pagina de cadastro de rotinas" type="SETUP">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:56.574605" level="INFO">${PAST_URL} = http://localhost:5173/admin/rotina/nova</msg>
+<var>${PAST_URL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-17T20:14:56.261220" elapsed="0.313385"/>
+</kw>
+<if>
+<branch type="IF" condition="'${PAST_URL}' != '${URL_ROTINA}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=rotina</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-06-17T20:14:56.574605" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>id=rotina</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-17T20:14:56.574605" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=btnRotina</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-06-17T20:14:56.574605" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>id=btnRotina</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-17T20:14:56.574605" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-06-17T20:14:56.574605" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-06-17T20:14:56.574605" elapsed="0.000000"/>
+</if>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:56.574605" elapsed="0.612681"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:56.261220" elapsed="0.926066"/>
+</kw>
+<kw name="Dado que o administrador informa o nome da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:57.187286" elapsed="0.610969"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:57.798255" elapsed="0.624683"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:14:58.422938" level="INFO">Typing text 'Alongamento Exaustivo Invalido' into text field 'id=nomeRotina'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:14:58.422938" elapsed="1.022517"/>
+</kw>
+<arg>Alongamento Exaustivo Invalido</arg>
+<status status="PASS" start="2026-06-17T20:14:57.187286" elapsed="2.258169"/>
+</kw>
+<kw name="E informa a duracao total da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_DURACAO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:14:59.445455" elapsed="0.612847"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_DURACAO}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:15:00.058302" elapsed="0.622962"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:15:00.681264" level="INFO">Typing text '31' into text field 'id=duracao'.</msg>
+<arg>${INPUT_DURACAO}</arg>
+<arg>${duracao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:15:00.681264" elapsed="0.947446"/>
+</kw>
+<arg>31</arg>
+<status status="PASS" start="2026-06-17T20:14:59.445455" elapsed="2.183255"/>
+</kw>
+<kw name="Quando solicitar o salvamento da rotina">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_SALVAR}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T20:15:01.628710" elapsed="0.611369"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:15:02.240079" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T20:15:02.240079" elapsed="1.554360"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:15:01.628710" elapsed="2.165729"/>
+</kw>
+<kw name="Entao a interface deve reter o envio da rotina impedindo o redirecionamento">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-17T20:15:04.098709" level="INFO">Current location is 'http://localhost:5173/admin/rotina/nova'.</msg>
+<arg>${URL_ROTINA}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-06-17T20:15:03.794439" elapsed="0.304270"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:15:03.794439" elapsed="0.304270"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:56.261220" elapsed="7.837489"/>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-17T20:15:04.100713" elapsed="2.483201"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:15:04.100713" elapsed="2.483201"/>
+</kw>
+<status status="PASS" start="2026-06-17T20:14:09.569632" elapsed="57.014282"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Cadastro Rotina" id="s1" pass="4" fail="0" skip="0">Cadastro Rotina</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -37,10 +37,11 @@ export default function GerenciarRotinas() {
   return (
     <div className="container" style={{ maxWidth: '700px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-        <h2>Gerenciar Rotinas ⏱️</h2>
+        <h2 id='listaRotinas'>Gerenciar Rotinas ⏱️</h2>
         <button 
           style={{ width: 'auto', backgroundColor: '#16a34a' }}
           onClick={() => navigate('/admin/rotina/nova')}
+          id='btnRotina'
         >
           + Nova Rotina
         </button>

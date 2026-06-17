@@ -40,10 +40,11 @@ export default function GerenciarExercicios() {
   return (
     <div className="container" style={{ maxWidth: '700px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-        <h2>Gerenciar Exercícios 📋</h2>
+        <h2 id='listaExercicios'>Gerenciar Exercícios </h2>
         <button 
           style={{ width: 'auto', backgroundColor: '#16a34a' }}
-          onClick={() => navigate('/admin/exercicio/novo')}
+          onClick={() => navigate('/admin/exercicio/novo')} 
+          id='btnExercicio'
         >
           + Novo Exercício
         </button>
