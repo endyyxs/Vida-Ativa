@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.2 on win32)" generated="2026-06-17T23:39:52.963044" rpa="false" schemaversion="5">
+<suite id="s1" name="testeIF" source="C:\Users\COMPUTADOR\OneDrive\Documentos\projeto\Vida-Ativa\teste_de_interface\testeIF.robot">
+<test id="s1-t1" name="CT01: Validar Acesso Permitido com Aceite Valido" line="30">
+<kw name="Abrir Navegador Na Tela De Login" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:53.240296" level="INFO">Opening browser 'edge' to base url 'http://localhost:5173'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-17T23:39:53.240296" elapsed="1.039089"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-17T23:39:54.279385" elapsed="0.037034"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T23:39:54.317421" elapsed="0.014010"/>
+</kw>
+<status status="PASS" start="2026-06-17T23:39:53.240296" elapsed="1.091135"/>
+</kw>
+<kw name="Fazer Login No Sistema">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:54.332433" level="INFO">Typing text 'antonio0@yahoo.com' into text field 'id=email'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${email_usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T23:39:54.332433" elapsed="0.122111"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:54.454544" level="INFO">Typing text 'antonio' into text field 'id=senha'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha_usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T23:39:54.454544" elapsed="0.061561"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:54.517106" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T23:39:54.516105" elapsed="0.052784"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_AVISO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-06-17T23:39:54.569891" elapsed="0.206185"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_ACEITE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T23:39:54.777078" elapsed="0.010008"/>
+</kw>
+<arg>${USUARIO1}</arg>
+<arg>${SENHA}</arg>
+<status status="PASS" start="2026-06-17T23:39:54.332433" elapsed="0.454653"/>
+</kw>
+<kw name="Select Checkbox" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:54.788087" level="INFO">Selecting checkbox 'css=[data-testid="quiz-termo-medico"]'.</msg>
+<arg>${CHECKBOX_ACEITE}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T23:39:54.787086" elapsed="0.050045"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:54.837131" level="INFO">Clicking button 'css=[data-testid="quiz-submit-button"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T23:39:54.837131" elapsed="0.048045"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:55.205468" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-17T23:39:55.206467" level="FAIL">UnexpectedAlertPresentException: Alert Text: Avaliação Concluída! Perfil: ATIVO_LEVE
+Message: unexpected alert open: {Alert text : Avaliação Concluída! Perfil: ATIVO_LEVE}
+  (Session info: MicrosoftEdge=149.0.4022.69)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff78c596925+e305]
+	msedgedriver!GetHandleVerifier [0x7ff78c596984+e364]
+	msedgedriver!GetHandleVerifier [0x7ff78cc188fa+6902da]
+	msedgedriver!(No symbol) [0x7ff78bfc9f41]
+	msedgedriver!(No symbol) [0x7ff78bf8485c]
+	msedgedriver!(No symbol) [0x7ff78bf83ab6]
+	msedgedriver!(No symbol) [0x7ff78bf84683]
+	msedgedriver!(No symbol) [0x7ff78c1d2ca1]
+	msedgedriver!(No symbol) [0x7ff78c1cf3f8]
+	msedgedriver!(No symbol) [0x7ff78c1dfe85]
+	msedgedriver!GetHandleVerifier [0x7ff78c5b28d1+2a2b1]
+	msedgedriver!GetHandleVerifier [0x7ff78c5bb676+33056]
+	msedgedriver!GetHandleVerifier [0x7ff78c59e3e4+15dc4]
+	msedgedriver!GetHandleVerifier [0x7ff78c59e505+15ee5]
+	msedgedriver!GetHandleVerifier [0x7ff78c58ab13+24f3]
+	KERNEL32!BaseThreadInitThunk [0x7ffa165c53e0+10]
+	ntdll!RtlUserThreadStart [0x7ffa17f2485b+2b]
+</msg>
+<arg>${URL_TREINOS}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="FAIL" start="2026-06-17T23:39:54.885176" elapsed="0.323294">UnexpectedAlertPresentException: Alert Text: Avaliação Concluída! Perfil: ATIVO_LEVE
+Message: unexpected alert open: {Alert text : Avaliação Concluída! Perfil: ATIVO_LEVE}
+  (Session info: MicrosoftEdge=149.0.4022.69)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff78c596925+e305]
+	msedgedriver!GetHandleVerifier [0x7ff78c596984+e364]
+	msedgedriver!GetHandleVerifier [0x7ff78cc188fa+6902da]
+	msedgedriver!(No symbol) [0x7ff78bfc9f41]
+	msedgedriver!(No symbol) [0x7ff78bf8485c]
+	msedgedriver!(No symbol) [0x7ff78bf83ab6]
+	msedgedriver!(No symbol) [0x7ff78bf84683]
+	msedgedriver!(No symbol) [0x7ff78c1d2ca1]
+	msedgedriver!(No symbol) [0x7ff78c1cf3f8]
+	msedgedriver!(No symbol) [0x7ff78c1dfe85]
+	msedgedriver!GetHandleVerifier [0x7ff78c5b28d1+2a2b1]
+	msedgedriver!GetHandleVerifier [0x7ff78c5bb676+33056]
+	msedgedriver!GetHandleVerifier [0x7ff78c59e3e4+15dc4]
+	msedgedriver!GetHandleVerifier [0x7ff78c59e505+15ee5]
+	msedgedriver!GetHandleVerifier [0x7ff78c58ab13+24f3]
+	KERNEL32!BaseThreadInitThunk [0x7ffa165c53e0+10]
+	ntdll!RtlUserThreadStart [0x7ffa17f2485b+2b]
+</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TITULO_TELA_TREINO}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-06-17T23:39:55.208470" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-17T23:39:55.208470" elapsed="2.129934"/>
+</kw>
+<doc>Testa a partição válida usando o primeiro usuário.</doc>
+<status status="FAIL" start="2026-06-17T23:39:53.239296" elapsed="4.099108">UnexpectedAlertPresentException: Alert Text: Avaliação Concluída! Perfil: ATIVO_LEVE
+Message: unexpected alert open: {Alert text : Avaliação Concluída! Perfil: ATIVO_LEVE}
+  (Session info: MicrosoftEdge=149.0.4022.69)
+Stacktrace:
+	msedgedriver!GetHandleVerifier [0x7ff78c596925+e305]
+	msedgedriver!GetHandleVerifier [0x7ff78c596984+e364]
+	msedgedriver!GetHandleVerifier [0x7ff78cc188fa+6902da]
+	msedgedriver!(No symbol) [0x7ff78bfc9f41]
+	msedgedriver!(No symbol) [0x7ff78bf8485c]
+	msedgedriver!(No symbol) [0x7ff78bf83ab6]
+	msedgedriver!(No symbol) [0x7ff78bf84683]
+	msedgedriver!(No symbol) [0x7ff78c1d2ca1]
+	msedgedriver!(No symbol) [0x7ff78c1cf3f8]
+	msedgedriver!(No symbol) [0x7ff78c1dfe85]
+	msedgedriver!GetHandleVerifier [0x7ff78c5b28d1+2a2b1]
+	msedgedriver!GetHandleVerifier [0x7ff78c5bb676+33056]
+	msedgedriver!GetHandleVerifier [0x7ff78c59e3e4+15dc4]
+	msedgedriver!GetHandleVerifier [0x7ff78c59e505+15ee5]
+	msedgedriver!GetHandleVerifier [0x7ff78c58ab13+24f3]
+	KERNEL32!BaseThreadInitThunk [0x7ffa165c53e0+10]
+	ntdll!RtlUserThreadStart [0x7ffa17f2485b+2b]
+</status>
+</test>
+<test id="s1-t2" name="CT02: Validar Acesso Bloqueado com Aceite Invalido" line="40">
+<kw name="Abrir Navegador Na Tela De Login" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:57.341407" level="INFO">Opening browser 'edge' to base url 'http://localhost:5173'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-17T23:39:57.340405" elapsed="1.303185"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-17T23:39:58.643590" elapsed="0.038034"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T23:39:58.681624" elapsed="0.018017"/>
+</kw>
+<status status="PASS" start="2026-06-17T23:39:57.340405" elapsed="1.359236"/>
+</kw>
+<kw name="Fazer Login No Sistema">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:58.702643" level="INFO">Typing text 'antonio2@yahoo.com' into text field 'id=email'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${email_usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T23:39:58.700641" elapsed="0.118109"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:58.819750" level="INFO">Typing text 'antonio' into text field 'id=senha'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha_usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T23:39:58.819750" elapsed="0.061055"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:58.880805" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>${BOTAO_ENTRAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T23:39:58.880805" elapsed="0.064058"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_AVISO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-06-17T23:39:58.945868" elapsed="0.207184"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKBOX_ACEITE}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T23:39:59.153052" elapsed="0.010009"/>
+</kw>
+<arg>${USUARIO2}</arg>
+<arg>${SENHA}</arg>
+<status status="PASS" start="2026-06-17T23:39:58.700641" elapsed="0.462420"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:59.164062" level="INFO">Clicking button 'css=[data-testid="quiz-submit-button"]'.</msg>
+<arg>${BOTAO_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-17T23:39:59.164062" elapsed="0.041038"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:59.212108" level="INFO">Current location is 'http://localhost:5173/quiz'.</msg>
+<arg>${URL_AVISO}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-06-17T23:39:59.206102" elapsed="0.006006"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_ERRO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-17T23:39:59.212108" elapsed="0.011008"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-17T23:39:59.224117" level="INFO">Verifying element 'css=[data-testid="quiz-error-message"]' contains exact text 'É obrigatório aceitar o aviso de responsabilidade médica para prosseguir.'.</msg>
+<arg>${MENSAGEM_ERRO}</arg>
+<arg>É obrigatório aceitar o aviso de responsabilidade médica para prosseguir.</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2026-06-17T23:39:59.223116" elapsed="0.012011"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-17T23:39:59.235127" elapsed="2.111919"/>
+</kw>
+<doc>Testa a partição inválida usando o segundo usuário.</doc>
+<status status="PASS" start="2026-06-17T23:39:57.340405" elapsed="4.006641"/>
+</test>
+<doc>Suite de testes para a tela de aceite do aviso medico.</doc>
+<status status="FAIL" start="2026-06-17T23:39:52.964045" elapsed="8.385003"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="testeIF" id="s1" pass="1" fail="1" skip="0">testeIF</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
