@@ -102,7 +102,7 @@ export default function HistoricoProgresso({ usuario }) {
         )}
       </div>
 
-      <button type="button" style={{ marginTop: '30px', backgroundColor: '#64748b', width: '100%' }} onClick={() => navigate('/dashboard')}>
+      <button id="btn-voltar-inicio" type="button" style={{ marginTop: '30px', backgroundColor: '#64748b', width: '100%' }} onClick={() => navigate('/dashboard')}>
         Voltar para o Início
       </button>
     </div>

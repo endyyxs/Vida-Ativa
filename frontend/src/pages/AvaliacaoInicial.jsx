@@ -96,7 +96,7 @@ export default function AvaliacaoInicial({ usuarioId, onAvaliacaoSuccess }) {
           </div>
         </div>
 
-        <button type="submit" className="btn-success" data-testid="quiz-submit-button">
+        <button id="btn-salvar-avaliacao" type="submit" className="btn-success" data-testid="quiz-submit-button">
           Salvar Avaliação
         </button>
 

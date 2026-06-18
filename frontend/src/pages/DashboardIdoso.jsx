@@ -47,7 +47,7 @@ export default function DashboardIdoso({ usuario }) {
       <section style={{ marginTop: '20px' }}>
         <h3 style={{ color: '#16a34a', textAlign: 'left' }}>⭐ Recomendados Especialmente para Você:</h3>
         <p style={{ fontSize: '14px', color: '#64748b', marginTop: '-10px' }}>Treinos totalmente compatíveis com suas restrições de saúde.</p>
-        
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {recomendadas.map(rotina => (
             <div key={rotina.id} style={{ border: '2px solid #16a34a', padding: '15px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#f0fdf4' }}>
@@ -55,7 +55,7 @@ export default function DashboardIdoso({ usuario }) {
                 <strong>{rotina.nome}</strong>
                 <p style={{ margin: '5px 0 0 0', fontSize: '14px', color: '#64748b' }}>⏱️ {rotina.duracao_total} minutos</p>
               </div>
-              <button className="btn-success" style={{ width: 'auto' }} onClick={() => abrirRotina(rotina)}>
+              <button className="btn-success" style={{ width: 'auto' }} id={`btn-ver-exercicios-${rotina.id}`} onClick={() => abrirRotina(rotina)}>
                 Ver Exercícios
               </button>
             </div>
@@ -66,7 +66,7 @@ export default function DashboardIdoso({ usuario }) {
       {/* SEÇÃO 2: Outras Sugestões do Sistema */}
       <section style={{ marginTop: '35px' }}>
         <h3 style={{ color: '#0284c7', textAlign: 'left' }}>💡 Outras Sugestões Disponíveis:</h3>
-        
+
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {outrasSugestoes.map(rotina => (
             <div key={rotina.id} style={{ border: '2px solid #cbd5e1', padding: '15px', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -74,7 +74,7 @@ export default function DashboardIdoso({ usuario }) {
                 <strong>{rotina.nome}</strong>
                 <p style={{ margin: '5px 0 0 0', fontSize: '14px', color: '#64748b' }}>⏱️ {rotina.duracao_total} minutos</p>
               </div>
-              <button style={{ width: 'auto', backgroundColor: '#0284c7' }} onClick={() => abrirRotina(rotina)}>
+              <button style={{ width: 'auto', backgroundColor: '#0284c7' }} onClick={() => abrirRotina(rotina)} id={`btn-ver-sugestao-${rotina.id}`}>
                 Ver Exercícios
               </button>
             </div>

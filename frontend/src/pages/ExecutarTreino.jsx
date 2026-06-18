@@ -15,7 +15,7 @@ export default function ExecutarTreino() {
           [ Player de Vídeo em Andamento ]
         </div>
       </div>
-      <button className="btn-success" onClick={() => navigate('/feedback', { state: { rotina } })} data-testid="treino-concluir-button">
+      <button id="btn-concluir-treino" className="btn-success" onClick={() => navigate('/feedback', { state: { rotina } })} data-testid="treino-concluir-button">
         ✅ Concluir Treino
       </button>
     </div>

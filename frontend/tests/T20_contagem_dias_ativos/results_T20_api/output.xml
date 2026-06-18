@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.10 on win32)" generated="2026-06-17T21:53:52.406253" rpa="false" schemaversion="5">
+<suite id="s1" name="Api Contagem Dias Ativos" source="E:\vidAtiva\Vida-Ativa\frontend\tests\T20_contagem_dias_ativos\api_contagem_dias_ativos.robot">
+<kw name="Criar Sessao e Preparar Usuario de Teste" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-06-17T21:53:52.523138" level="INFO">Creating Session using : alias=vidaativa, url=http://localhost:3000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>vidaativa</arg>
+<arg>${BASE_URL}</arg>
+<arg>verify=${False}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-06-17T21:53:52.523138" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-17T21:53:52.523652" level="INFO">${login_body} = {'email': 't20.teste@vidaativa.com', 'senha': '123456789'}</msg>
+<var>${login_body}</var>
+<arg>email=${EMAIL_IDOSO}</arg>
+<arg>senha=${SENHA_IDOSO}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-17T21:53:52.523652" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-06-17T21:53:53.514233" level="INFO">POST Request : url=http://localhost:3000/api/usuarios/login 
+ path_url=/api/usuarios/login 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '58', 'Content-Type': 'application/json'} 
+ body=b'{"email": "t20.teste@vidaativa.com", "senha": "123456789"}' 
+ </msg>
+<msg time="2026-06-17T21:53:53.514233" level="INFO">POST Response : url=http://localhost:3000/api/usuarios/login 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '354', 'ETag': 'W/"162-iIciKulC4xgcgSYJnJtUaPdK6r4"', 'Date': 'Thu, 18 Jun 2026 00:53:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"mensagem":"Login realizado com sucesso!","usuario":{"id":"cd4424cb-d137-421d-a7da-73e883841695","nome":"Teste T20 Eduardo","email":"t20.teste@vidaativa.com","tipo":"IDOSO","aceitou_aviso_medico":false,"respondeu_quiz":true,"perfil_clinico":"ATIVO_LEVE","limitacoes_fisicas":"{}","data_cadastro":"2026-06-18T03:48:24.220Z","registro_profissional":null}} 
+ </msg>
+<msg time="2026-06-17T21:53:53.514233" level="INFO">${login_resp} = &lt;Response [200]&gt;</msg>
+<var>${login_resp}</var>
+<arg>vidaativa</arg>
+<arg>/usuarios/login</arg>
+<arg>json=${login_body}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-06-17T21:53:52.523652" elapsed="0.990581"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-06-17T21:53:53.515235" level="INFO">${usuario} = {'id': 'cd4424cb-d137-421d-a7da-73e883841695', 'nome': 'Teste T20 Eduardo', 'email': 't20.teste@vidaativa.com', 'tipo': 'IDOSO', 'aceitou_aviso_medico': False, 'respondeu_quiz': True, 'perfil_clinico'...</msg>
+<var>${usuario}</var>
+<arg>${login_resp.json()}</arg>
+<arg>usuario</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.514233" elapsed="0.001002"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-06-17T21:53:53.515235" level="INFO">${id} = cd4424cb-d137-421d-a7da-73e883841695</msg>
+<var>${id}</var>
+<arg>${usuario}</arg>
+<arg>id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.515235" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-17T21:53:53.516493" level="INFO">${USUARIO_ID} = cd4424cb-d137-421d-a7da-73e883841695</msg>
+<arg>${USUARIO_ID}</arg>
+<arg>${id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.515235" elapsed="0.001258"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-17T21:53:53.516493" level="INFO">${params} = {'usuarioId': 'cd4424cb-d137-421d-a7da-73e883841695'}</msg>
+<var>${params}</var>
+<arg>usuarioId=${id}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.516493" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-06-17T21:53:53.797819" level="INFO">GET Request : url=http://localhost:3000/api/rotinas/recomendadas?usuarioId=cd4424cb-d137-421d-a7da-73e883841695 
+ path_url=/api/rotinas/recomendadas?usuarioId=cd4424cb-d137-421d-a7da-73e883841695 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-06-17T21:53:53.797819" level="INFO">GET Response : url=http://localhost:3000/api/rotinas/recomendadas?usuarioId=cd4424cb-d137-421d-a7da-73e883841695 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '403', 'ETag': 'W/"193-9Iy2BNIF5aDa3lx+GjreQ0fYsfo"', 'Date': 'Thu, 18 Jun 2026 00:53:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body=[{"id":"8d3f9394-319d-43d6-af00-e8296038a794","nome":"superior 1","duracao_total":15,"perfil_alvo":"ATIVO_LEVE","data_criacao":"2026-06-06T23:07:26.960Z","contraindicacoes_exercicios":["ombro","costas"]},{"id":"fe9c6111-f85e-481b-bfb7-0724e52a90b6","nome":"treino de peito","duracao_total":10,"perfil_alvo":"ATIVO_LEVE","data_criacao":"2026-06-06T22:06:14.804Z","contraindicacoes_exercicios":["ombro"]}] 
+ </msg>
+<msg time="2026-06-17T21:53:53.797819" level="INFO">${rotinas_resp} = &lt;Response [200]&gt;</msg>
+<var>${rotinas_resp}</var>
+<arg>vidaativa</arg>
+<arg>/rotinas/recomendadas</arg>
+<arg>params=${params}</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.516493" elapsed="0.281326"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-06-17T21:53:53.798965" level="INFO">${rotinas} = [{'id': '8d3f9394-319d-43d6-af00-e8296038a794', 'nome': 'superior 1', 'duracao_total': 15, 'perfil_alvo': 'ATIVO_LEVE', 'data_criacao': '2026-06-06T23:07:26.960Z', 'contraindicacoes_exercicios': ['omb...</msg>
+<var>${rotinas}</var>
+<arg>${rotinas_resp.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.797819" elapsed="0.001146"/>
+</kw>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-06-17T21:53:53.798965" level="INFO">${primeira_rotina} = {'id': '8d3f9394-319d-43d6-af00-e8296038a794', 'nome': 'superior 1', 'duracao_total': 15, 'perfil_alvo': 'ATIVO_LEVE', 'data_criacao': '2026-06-06T23:07:26.960Z', 'contraindicacoes_exercicios': ['ombr...</msg>
+<var>${primeira_rotina}</var>
+<arg>${rotinas}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.798965" elapsed="0.000000"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2026-06-17T21:53:53.798965" level="INFO">${rid} = 8d3f9394-319d-43d6-af00-e8296038a794</msg>
+<var>${rid}</var>
+<arg>${primeira_rotina}</arg>
+<arg>id</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.798965" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-06-17T21:53:53.798965" level="INFO">${ROTINA_ID} = 8d3f9394-319d-43d6-af00-e8296038a794</msg>
+<arg>${ROTINA_ID}</arg>
+<arg>${rid}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.798965" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-06-17T21:53:52.522345" elapsed="1.277943"/>
+</kw>
+<test id="s1-t1" name="CT01 - T20: Deve retornar erro ao tentar salvar historico de usuario inexistente" line="21">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-17T21:53:53.800785" level="INFO">${body} = {'rotina_id': '8d3f9394-319d-43d6-af00-e8296038a794', 'esforco': 'MODERADO'}</msg>
+<var>${body}</var>
+<arg>rotina_id=8d3f9394-319d-43d6-af00-e8296038a794</arg>
+<arg>esforco=MODERADO</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.800785" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-06-17T21:53:53.944519" level="INFO">POST Request : url=http://localhost:3000/api/usuarios/00000000-0000-0000-0000-000000000000/historico 
+ path_url=/api/usuarios/00000000-0000-0000-0000-000000000000/historico 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '76', 'Content-Type': 'application/json'} 
+ body=b'{"rotina_id": "8d3f9394-319d-43d6-af00-e8296038a794", "esforco": "MODERADO"}' 
+ </msg>
+<msg time="2026-06-17T21:53:53.944519" level="INFO">POST Response : url=http://localhost:3000/api/usuarios/00000000-0000-0000-0000-000000000000/historico 
+ status=400, reason=Bad Request 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '38', 'ETag': 'W/"26-NtDlU8qmsAtLyRwtQ9shA8aYciY"', 'Date': 'Thu, 18 Jun 2026 00:53:53 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"error":"Erro ao salvar histórico."} 
+ </msg>
+<msg time="2026-06-17T21:53:53.944519" level="INFO">${response} = &lt;Response [400]&gt;</msg>
+<var>${response}</var>
+<arg>vidaativa</arg>
+<arg>/usuarios/00000000-0000-0000-0000-000000000000/historico</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=any</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.801287" elapsed="0.143232"/>
+</kw>
+<kw name="Should Not Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-06-17T21:53:53.945520" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are equal after converting them to integers.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.944519" elapsed="0.001001"/>
+</kw>
+<doc>RF13 / RN07 — Entrada Inválida: ID de usuário inexistente no banco.
+O backend deve retornar erro ao tentar gravar um histórico
+associado a um usuário que não existe na tabela usuarios.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.800288" elapsed="0.145232"/>
+</test>
+<test id="s1-t2" name="CT02 - T20: Deve registrar o primeiro treino e o historico deve ter exatamente 1 entrada" line="37">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-06-17T21:53:55.052989" level="INFO">GET Request : url=http://localhost:3000/api/usuarios/cd4424cb-d137-421d-a7da-73e883841695/historico 
+ path_url=/api/usuarios/cd4424cb-d137-421d-a7da-73e883841695/historico 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-06-17T21:53:55.052989" level="INFO">GET Response : url=http://localhost:3000/api/usuarios/cd4424cb-d137-421d-a7da-73e883841695/historico 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '743', 'ETag': 'W/"2e7-rOXqHSN5LMlER2d36YVOK20u+eM"', 'Date': 'Thu, 18 Jun 2026 00:53:55 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body=[{"id":"c3bbb9b0-5eed-4910-87a1-1c0e9bd16ad6","usuario_id":"cd4424cb-d137-421d-a7da-73e883841695","rotina_id":"8d3f9394-319d-43d6-af00-e8296038a794","percepcao_esforco":null,"data_realizacao":"2026-06-18T03:50:47.088Z","rotina_nome":"superior 1"},{"id":"0a05d7f3-82d3-44b1-a361-b451b6f4c068","usuario_id":"cd4424cb-d137-421d-a7da-73e883841695","rotina_id":"8d3f9394-319d-43d6-af00-e8296038a794","percepcao_esforco":"","data_realizacao":"2026-06-18T03:50:46.932Z","rotina_nome":"superior 1"},{"id":"89089ca6-c8e8-4fbb-8005-6c46ff83f93a","usuario_id":"cd4424cb-d137-421d-a7da-73e883841695","rotina_id":"8d3f9394-319d-43d6-af00-e8296038a794","percepcao_esforco":"MODERADO","data_realizacao":"2026-06-18T03:50:14.196Z","rotina_nome":"superior 1"}] 
+ </msg>
+<msg time="2026-06-17T21:53:55.052989" level="INFO">${hist_antes} = &lt;Response [200]&gt;</msg>
+<var>${hist_antes}</var>
+<arg>vidaativa</arg>
+<arg>/usuarios/${USUARIO_ID}/historico</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-06-17T21:53:53.945520" elapsed="1.107469"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-06-17T21:53:55.054037" level="INFO">Length is 3.</msg>
+<msg time="2026-06-17T21:53:55.054037" level="INFO">${contagem_antes} = 3</msg>
+<var>${contagem_antes}</var>
+<arg>${hist_antes.json()}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-06-17T21:53:55.052989" elapsed="0.001048"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-06-17T21:53:55.054037" level="INFO">${body} = {'rotina_id': '8d3f9394-319d-43d6-af00-e8296038a794', 'esforco': 'MODERADO'}</msg>
+<var>${body}</var>
+<arg>rotina_id=${ROTINA_ID}</arg>
+<arg>esforco=MODERADO</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-06-17T21:53:55.054037" elapsed="0.000000"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-06-17T21:53:55.215609" level="INFO">POST Request : url=http://localhost:3000/api/usuarios/cd4424cb-d137-421d-a7da-73e883841695/historico 
+ path_url=/api/usuarios/cd4424cb-d137-421d-a7da-73e883841695/historico 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '76', 'Content-Type': 'application/json'} 
+ body=b'{"rotina_id": "8d3f9394-319d-43d6-af00-e8296038a794", "esforco": "MODERADO"}' 
+ </msg>
+<msg time="2026-06-17T21:53:55.215609" level="INFO">POST Response : url=http://localhost:3000/api/usuarios/cd4424cb-d137-421d-a7da-73e883841695/historico 
+ status=201, reason=Created 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '47', 'ETag': 'W/"2f-1e/CogS2g9yRm4qkzE/R/nVVa48"', 'Date': 'Thu, 18 Jun 2026 00:53:55 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"mensagem":"Treino registrado no histórico!"} 
+ </msg>
+<msg time="2026-06-17T21:53:55.215609" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>vidaativa</arg>
+<arg>/usuarios/${USUARIO_ID}/historico</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=201</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-06-17T21:53:55.054037" elapsed="0.161572"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-06-17T21:53:55.215609" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-06-17T21:53:55.215609" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${response.json()['mensagem']}</arg>
+<arg>registrado</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-06-17T21:53:55.215609" elapsed="0.000999"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-06-17T21:53:55.374950" level="INFO">GET Request : url=http://localhost:3000/api/usuarios/cd4424cb-d137-421d-a7da-73e883841695/historico 
+ path_url=/api/usuarios/cd4424cb-d137-421d-a7da-73e883841695/historico 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-06-17T21:53:55.374950" level="INFO">GET Response : url=http://localhost:3000/api/usuarios/cd4424cb-d137-421d-a7da-73e883841695/historico 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '995', 'ETag': 'W/"3e3-TSEPbU3MhU5tyh6CF+c5AVhlhco"', 'Date': 'Thu, 18 Jun 2026 00:53:55 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body=[{"id":"80fe8bdf-8987-40da-909a-80bd793cb7f4","usuario_id":"cd4424cb-d137-421d-a7da-73e883841695","rotina_id":"8d3f9394-319d-43d6-af00-e8296038a794","percepcao_esforco":"MODERADO","data_realizacao":"2026-06-18T03:51:26.308Z","rotina_nome":"superior 1"},{"id":"c3bbb9b0-5eed-4910-87a1-1c0e9bd16ad6","usuario_id":"cd4424cb-d137-421d-a7da-73e883841695","rotina_id":"8d3f9394-319d-43d6-af00-e8296038a794","percepcao_esforco":null,"data_realizacao":"2026-06-18T03:50:47.088Z","rotina_nome":"superior 1"},{"id":"0a05d7f3-82d3-44b1-a361-b451b6f4c068","usuario_id":"cd4424cb-d137-421d-a7da-73e883841695","rotina_id":"8d3f9394-319d-43d6-af00-e8296038a794","percepcao_esforco":"","data_realizacao":"2026-06-18T03:50:46.932Z","rotina_nome":"superior 1"},{"id":"89089ca6-c8e8-4fbb-8005-6c46ff83f93a","usuario_id":"cd4424cb-d137-421d-a7da-73e883841695","rotina_id":"8d3f9394-319d-43d6-af00-e8296038a794","percepcao_esforco":"MODERADO","data_realizacao":"2026-06-18T03:50:14.196Z","rotina_nome":"superior 1"}] 
+ </msg>
+<msg time="2026-06-17T21:53:55.374950" level="INFO">${hist_depois} = &lt;Response [200]&gt;</msg>
+<var>${hist_depois}</var>
+<arg>vidaativa</arg>
+<arg>/usuarios/${USUARIO_ID}/historico</arg>
+<arg>expected_status=200</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-06-17T21:53:55.217110" elapsed="0.157840"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-06-17T21:53:55.376454" level="INFO">Length is 4.</msg>
+<msg time="2026-06-17T21:53:55.376454" level="INFO">${contagem_depois} = 4</msg>
+<var>${contagem_depois}</var>
+<arg>${hist_depois.json()}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-06-17T21:53:55.374950" elapsed="0.001504"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-06-17T21:53:55.377466" level="INFO">${esperado} = 4</msg>
+<var>${esperado}</var>
+<arg>${contagem_antes} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-06-17T21:53:55.376454" elapsed="0.001012"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<arg>${contagem_depois}</arg>
+<arg>${esperado}</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-06-17T21:53:55.377466" elapsed="0.000000"/>
+</kw>
+<doc>RF13 / RN07 — Entrada Válida: Usuário completa o primeiro treino do dia.
+O contador deve passar de 0 para 1 (uma entrada no histórico).</doc>
+<status status="PASS" start="2026-06-17T21:53:53.945520" elapsed="1.431946"/>
+</test>
+<kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
+<msg time="2026-06-17T21:53:55.378036" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2026-06-17T21:53:55.378036" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-06-17T21:53:52.406759" elapsed="2.971277"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Api Contagem Dias Ativos" id="s1" pass="2" fail="0" skip="0">Api Contagem Dias Ativos</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
