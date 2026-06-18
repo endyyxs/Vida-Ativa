@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.9 on win32)" generated="2026-06-18T09:09:05.826561" rpa="false" schemaversion="5">
+<suite id="s1" name="testeT35 visual" source="d:\Projetos pessoais\vida-Ativa\frontend\tests\T35_restricao_por_condicao\testeT35_visual.robot">
+<kw name="Abrir Navegador" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:06.205492" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<msg time="2026-06-18T09:09:11.038211" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:09:11.039223" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:09:11.039223" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:09:11.039223" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--incognito")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-18T09:09:06.205492" elapsed="7.485876"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-18T09:09:13.691368" elapsed="0.039997"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.5 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-06-18T09:09:13.731365" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:09:06.204333" elapsed="7.527032"/>
+</kw>
+<test id="s1-t1" name="CT01 - T35: Idoso com restricao ve apenas rotinas sem conflito de contraindicacao" line="35">
+<kw name="Realizar Login Como Idoso" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:13.734409" level="INFO">Opening url 'http://localhost:5173/'</msg>
+<arg>${URL_LOGIN}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-18T09:09:13.733902" elapsed="0.571888"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:09:14.305790" elapsed="1.018567"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:15.324357" elapsed="1.032013"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:16.356370" level="INFO">Typing text 'antonio2@yahoo.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:16.356370" elapsed="1.614935"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:17.971891" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-18T09:09:19.012504" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:17.971305" elapsed="1.581503"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:09:19.552808" elapsed="1.015345"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:20.568153" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:20.568153" elapsed="2.563359"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEM_NAVBAR}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:09:23.131512" elapsed="1.719696"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:40.940631" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-18T09:09:40.940631" level="FAIL">Location did not contain '/dashboard' in 15 seconds.</msg>
+<arg>/dashboard</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="FAIL" start="2026-06-18T09:09:24.851208" elapsed="16.092066">Location did not contain '/dashboard' in 15 seconds.</status>
+</kw>
+<arg>${EMAIL_SEDENTARIO}</arg>
+<arg>${SENHA_SEDENTARIO}</arg>
+<status status="FAIL" start="2026-06-18T09:09:13.732892" elapsed="27.210382">Location did not contain '/dashboard' in 15 seconds.</status>
+</kw>
+<doc>RN01 + RN03 — Usuário antonio2 tem limitacao_fisica 'antonio nas costas'.
+Rotinas SEDENTARIO no banco possuem exercicios com contraindicacoes = null (sem risco).
+Resultado Esperado: Rotinas EXIBIDAS pois nao ha conflito entre 'costas' e null.</doc>
+<status status="FAIL" start="2026-06-18T09:09:13.731365" elapsed="27.211909">Setup failed:
+Location did not contain '/dashboard' in 15 seconds.</status>
+</test>
+<test id="s1-t2" name="CT02 - T35: Idoso ATIVO_LEVE sem restricao real ve rotinas do perfil" line="49">
+<kw name="Realizar Login Como Idoso" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:40.945787" level="INFO">Opening url 'http://localhost:5173/'</msg>
+<arg>${URL_LOGIN}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-18T09:09:40.945787" elapsed="0.555342"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:09:41.501129" elapsed="1.011527"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:42.512656" elapsed="1.023858"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:43.536514" level="INFO">Typing text 'antonio0@yahoo.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:43.536514" elapsed="1.582709"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:45.119223" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-18T09:09:46.144045" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:45.119223" elapsed="1.561354"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:09:46.680577" elapsed="1.011366"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:47.692461" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:47.691943" elapsed="2.554467"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEM_NAVBAR}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:09:50.246410" elapsed="1.012781"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/dashboard</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:09:51.259191" elapsed="0.504353"/>
+</kw>
+<arg>${EMAIL_ATIVO}</arg>
+<arg>${SENHA_ATIVO}</arg>
+<status status="PASS" start="2026-06-18T09:09:40.943274" elapsed="10.820270"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TITULO_RECOMENDADAS}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:09:51.763544" elapsed="1.017302"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:53.289202" level="INFO">${rotinas_visiveis} = 2</msg>
+<var>${rotinas_visiveis}</var>
+<arg>css=section div button[id^='btn-ver-exercicios']</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:52.780846" elapsed="0.508356"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-06-18T09:09:53.289713" level="INFO">Rotinas visiveis para antonio0 (ATIVO_LEVE): 2</msg>
+<arg>Rotinas visiveis para antonio0 (ATIVO_LEVE): ${rotinas_visiveis}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-06-18T09:09:53.289202" elapsed="0.000511"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${rotinas_visiveis} &gt;= 1</arg>
+<arg>msg=FALHA RN01: Esperava rotinas do perfil ATIVO_LEVE para usuario sem restricoes conflitantes.</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-06-18T09:09:53.290227" elapsed="0.000515"/>
+</kw>
+<doc>RN01 — Usuário antonio0 tem perfil ATIVO_LEVE e limitacoes_fisicas = '{}'.
+Resultado Esperado: Rotinas do perfil ATIVO_LEVE sao exibidas normalmente.</doc>
+<status status="PASS" start="2026-06-18T09:09:40.943274" elapsed="12.347468"/>
+</test>
+<test id="s1-t3" name="CT03 - T35: Secao Recomendados e renderizada corretamente no Dashboard" line="62">
+<kw name="Realizar Login Como Idoso" type="SETUP">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:53.291783" level="INFO">Opening url 'http://localhost:5173/'</msg>
+<arg>${URL_LOGIN}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-18T09:09:53.291783" elapsed="0.558964"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:09:53.850747" elapsed="1.011901"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:54.862648" elapsed="1.022119"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:55.884767" level="INFO">Typing text 'antonio0@yahoo.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:55.884767" elapsed="1.601951"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:09:57.487228" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-18T09:09:58.508665" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:09:57.486718" elapsed="1.559153"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:09:59.045871" elapsed="1.012470"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:10:00.058341" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:10:00.058341" elapsed="2.578704"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ELEM_NAVBAR}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:10:02.637045" elapsed="1.011633"/>
+</kw>
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/dashboard</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:10:03.648678" elapsed="0.504165"/>
+</kw>
+<arg>${EMAIL_ATIVO}</arg>
+<arg>${SENHA_ATIVO}</arg>
+<status status="PASS" start="2026-06-18T09:09:53.290742" elapsed="10.862101"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TITULO_RECOMENDADAS}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:10:04.152843" elapsed="1.012188"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:10:06.177069" level="INFO">Element 'xpath=//h3[contains(text(), 'Recomendados Especialmente para')]' is displayed.</msg>
+<arg>${TITULO_RECOMENDADAS}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:10:05.165031" elapsed="1.012038"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-06-18T09:10:06.177578" level="INFO">VALIDADO: Secao de recomendados renderizou corretamente no Dashboard do Idoso.</msg>
+<arg>VALIDADO: Secao de recomendados renderizou corretamente no Dashboard do Idoso.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-06-18T09:10:06.177069" elapsed="0.000509"/>
+</kw>
+<doc>Teste de Sanidade — Verifica que a estrutura do Dashboard do Idoso
+esta correta e a secao Recomendados e exibida apos o login.</doc>
+<status status="PASS" start="2026-06-18T09:09:53.290742" elapsed="12.886836"/>
+</test>
+<kw name="Fechar Navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-18T09:10:06.178104" elapsed="2.594063"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:10:06.178104" elapsed="2.594063"/>
+</kw>
+<doc>Suite de testes de interface para o T35 — Exibição de Restrição por Condição (RN01 e RN03).
+Foco: Validar que o Dashboard do Idoso exibe apenas rotinas compatíveis com as limitações físicas do usuário.
+Responsável: Henrique Medeiros
+
+Regras de Negócio testadas:
+RN01: O sistema deve filtrar exercícios com base no perfil clínico do usuário.
+RN03: Se o usuário possui uma limitação física que coincide com a contraindicação
+      de qualquer exercício em uma rotina, essa rotina deve ser OCULTADA.</doc>
+<status status="FAIL" start="2026-06-18T09:09:05.828623" elapsed="62.943544"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="testeT35 visual" id="s1" pass="2" fail="1" skip="0">testeT35 visual</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-18T09:09:11.038211" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:09:11.039223" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:09:11.039223" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:09:11.039223" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+</errors>
+</robot>

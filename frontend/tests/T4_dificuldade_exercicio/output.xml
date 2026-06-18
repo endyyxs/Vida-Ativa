@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.11.9 on win32)" generated="2026-06-18T09:04:23.286350" rpa="false" schemaversion="5">
+<suite id="s1" name="testeT4 visual" source="d:\Projetos pessoais\vida-Ativa\frontend\tests\T4_dificuldade_exercicio\testeT4_visual.robot">
+<kw name="Dado que o profissional realiza o login e acessa o painel" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:25.398937" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<msg time="2026-06-18T09:04:30.525684" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:04:30.525684" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:04:30.525684" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:04:30.525684" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=add_argument("--incognito")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-18T09:04:25.398428" elapsed="9.909963"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-18T09:04:35.308925" elapsed="0.029368"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.5 seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2026-06-18T09:04:35.338293" elapsed="0.000514"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:04:35.338807" elapsed="1.075381"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:36.414752" level="INFO">Typing text 'dsimoess@teste.com' into text field 'id=email'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>dsimoess@teste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:04:36.414188" elapsed="1.619696"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:38.033884" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-18T09:04:39.085334" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${INPUT_SENHA}</arg>
+<arg>123456789</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:04:38.033884" elapsed="1.594746"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:04:39.628630" elapsed="1.014793"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:40.643423" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>${BTN_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:04:40.643423" elapsed="2.565516"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=nomeApp</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:04:43.208939" elapsed="1.722436"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:04:25.397390" elapsed="19.533985"/>
+</kw>
+<test id="s1-t1" name="CT01 - T4: Deve cadastrar exercicio com dificuldade selecionada (FACIL)" line="28">
+<kw name="Acessar a pagina de cadastro de exercicios" type="SETUP">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:45.436485" level="INFO">${URL_ATUAL} = http://localhost:5173/admin/home</msg>
+<var>${URL_ATUAL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-18T09:04:44.932476" elapsed="0.504009"/>
+</kw>
+<if>
+<branch type="IF" condition="'${URL_ATUAL}' != '${URL_CADASTRO}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=exercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:04:45.436995" elapsed="1.015573"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:46.452568" level="INFO">Clicking element 'id=exercicio'.</msg>
+<arg>id=exercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:04:46.452568" elapsed="1.072592"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=btnExercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:04:47.525160" elapsed="1.015910"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:48.541594" level="INFO">Clicking element 'id=btnExercicio'.</msg>
+<arg>id=btnExercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:04:48.541070" elapsed="1.062682"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:04:45.436485" elapsed="4.167267"/>
+</branch>
+<status status="PASS" start="2026-06-18T09:04:45.436485" elapsed="4.167267"/>
+</if>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_CADASTRO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:04:49.604282" elapsed="0.505789"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-18T09:04:51.110437" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-18T09:04:50.110071" elapsed="1.000366"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:04:51.110437" elapsed="1.014431"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:04:44.931927" elapsed="7.192941"/>
+</kw>
+<kw name="Dado que o profissional informa o nome do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${nome}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_NOME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:04:52.125886" elapsed="0.000356"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:52.128285" level="INFO">Typing text 'Alongamento Cervical' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:04:52.128285" elapsed="1.603134"/>
+</kw>
+<arg>'${nome}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:04:52.127271" elapsed="1.604148"/>
+</kw>
+<arg>Alongamento Cervical</arg>
+<status status="PASS" start="2026-06-18T09:04:52.124868" elapsed="1.606551"/>
+</kw>
+<kw name="E informa a descricao do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${descricao}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_DESC}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:04:53.732046" elapsed="0.000618"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:53.733849" level="INFO">Typing text 'Movimento lento e suave do pescoço para ambos os lados.' into text field 'id=descricao'.</msg>
+<arg>${INPUT_DESC}</arg>
+<arg>${descricao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:04:53.733244" elapsed="1.656249"/>
+</kw>
+<arg>'${descricao}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_DESC}</arg>
+<arg>${descricao}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:04:53.732664" elapsed="1.656829"/>
+</kw>
+<arg>Movimento lento e suave do pescoço para ambos os lados.</arg>
+<status status="PASS" start="2026-06-18T09:04:53.731419" elapsed="1.658425"/>
+</kw>
+<kw name="E seleciona o nivel de dificuldade">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:55.390596" level="INFO">Selecting options from selection list 'id=dificuldade' by value FACIL.</msg>
+<arg>${SELECT_DIF}</arg>
+<arg>${dificuldade}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-18T09:04:55.389844" elapsed="3.041301"/>
+</kw>
+<arg>FACIL</arg>
+<status status="PASS" start="2026-06-18T09:04:55.389844" elapsed="3.041301"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:04:58.431145" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:04:58.431145" elapsed="2.580169"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:04:58.431145" elapsed="2.580169"/>
+</kw>
+<kw name="Entao o sistema deve redirecionar para a listagem de exercicios">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LISTA_EXER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:01.012322" elapsed="2.434598"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:03.951545" level="INFO">Current location contains '/admin/exercicios'.</msg>
+<arg>/admin/exercicios</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:05:03.446920" elapsed="0.504625"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:01.011314" elapsed="2.940231"/>
+</kw>
+<doc>Partição Válida (P2): Verifica que o cadastro é concluído quando
+a dificuldade FACIL está selecionada.</doc>
+<status status="PASS" start="2026-06-18T09:04:44.931375" elapsed="19.020170"/>
+</test>
+<test id="s1-t2" name="CT02 - T4: Deve cadastrar exercicio com dificuldade selecionada (MODERADO)" line="38">
+<kw name="Acessar a pagina de cadastro de exercicios" type="SETUP">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:04.457609" level="INFO">${URL_ATUAL} = http://localhost:5173/admin/exercicios</msg>
+<var>${URL_ATUAL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-18T09:05:03.952583" elapsed="0.505026"/>
+</kw>
+<if>
+<branch type="IF" condition="'${URL_ATUAL}' != '${URL_CADASTRO}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=exercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:04.458123" elapsed="1.011682"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:05.470315" level="INFO">Clicking element 'id=exercicio'.</msg>
+<arg>id=exercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:05.469805" elapsed="1.051915"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=btnExercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:06.521720" elapsed="1.014747"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:07.536984" level="INFO">Clicking element 'id=btnExercicio'.</msg>
+<arg>id=btnExercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:07.536467" elapsed="1.314945"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:04.457609" elapsed="4.393803"/>
+</branch>
+<status status="PASS" start="2026-06-18T09:05:04.457609" elapsed="4.393803"/>
+</if>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_CADASTRO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:05:08.851412" elapsed="0.506111"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-18T09:05:10.357663" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-18T09:05:09.357523" elapsed="1.000140"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:10.357663" elapsed="1.012489"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:03.952583" elapsed="7.417569"/>
+</kw>
+<kw name="Dado que o profissional informa o nome do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${nome}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_NOME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:11.370664" elapsed="0.000509"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:11.371173" level="INFO">Typing text 'Caminhada Rápida' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:11.371173" elapsed="1.596133"/>
+</kw>
+<arg>'${nome}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:11.371173" elapsed="1.596133"/>
+</kw>
+<arg>Caminhada Rápida</arg>
+<status status="PASS" start="2026-06-18T09:05:11.370152" elapsed="1.597154"/>
+</kw>
+<kw name="E informa a descricao do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${descricao}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_DESC}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:12.967306" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:12.968819" level="INFO">Typing text 'Caminhar em ritmo acelerado por 20 minutos.' into text field 'id=descricao'.</msg>
+<arg>${INPUT_DESC}</arg>
+<arg>${descricao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:12.968819" elapsed="1.622485"/>
+</kw>
+<arg>'${descricao}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_DESC}</arg>
+<arg>${descricao}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:12.967306" elapsed="1.623998"/>
+</kw>
+<arg>Caminhar em ritmo acelerado por 20 minutos.</arg>
+<status status="PASS" start="2026-06-18T09:05:12.967306" elapsed="1.623998"/>
+</kw>
+<kw name="E seleciona o nivel de dificuldade">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:14.591815" level="INFO">Selecting options from selection list 'id=dificuldade' by value MODERADO.</msg>
+<arg>${SELECT_DIF}</arg>
+<arg>${dificuldade}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-18T09:05:14.591815" elapsed="4.076173"/>
+</kw>
+<arg>MODERADO</arg>
+<status status="PASS" start="2026-06-18T09:05:14.591815" elapsed="4.076173"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:18.668498" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:18.668498" elapsed="2.557600"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:18.667988" elapsed="2.558110"/>
+</kw>
+<kw name="Entao o sistema deve redirecionar para a listagem de exercicios">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LISTA_EXER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:21.226098" elapsed="2.431388"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:24.161459" level="INFO">Current location contains '/admin/exercicios'.</msg>
+<arg>/admin/exercicios</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:05:23.657486" elapsed="0.503973"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:21.226098" elapsed="2.935361"/>
+</kw>
+<doc>Partição Válida (P2): Verifica que o cadastro é concluído quando
+a dificuldade MODERADO está selecionada.</doc>
+<status status="PASS" start="2026-06-18T09:05:03.952065" elapsed="20.209394"/>
+</test>
+<test id="s1-t3" name="CT03 - T4: Deve cadastrar exercicio com dificuldade selecionada (DIFICIL)" line="48">
+<kw name="Acessar a pagina de cadastro de exercicios" type="SETUP">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:24.666470" level="INFO">${URL_ATUAL} = http://localhost:5173/admin/exercicios</msg>
+<var>${URL_ATUAL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-18T09:05:24.162473" elapsed="0.503997"/>
+</kw>
+<if>
+<branch type="IF" condition="'${URL_ATUAL}' != '${URL_CADASTRO}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=exercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:24.666470" elapsed="1.013441"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:25.679911" level="INFO">Clicking element 'id=exercicio'.</msg>
+<arg>id=exercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:25.679911" elapsed="1.047671"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=btnExercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:26.727582" elapsed="1.011072"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:27.739197" level="INFO">Clicking element 'id=btnExercicio'.</msg>
+<arg>id=btnExercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:27.738654" elapsed="1.043798"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:24.666470" elapsed="4.115982"/>
+</branch>
+<status status="PASS" start="2026-06-18T09:05:24.666470" elapsed="4.115982"/>
+</if>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_CADASTRO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:05:28.782452" elapsed="0.504810"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-18T09:05:30.288255" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-18T09:05:29.287262" elapsed="1.000993"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:30.288761" elapsed="1.017810"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:24.162473" elapsed="7.144098"/>
+</kw>
+<kw name="Dado que o profissional informa o nome do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${nome}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_NOME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:31.306571" elapsed="0.001069"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:31.309149" level="INFO">Typing text 'Agachamento com Peso' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:31.307640" elapsed="1.624346"/>
+</kw>
+<arg>'${nome}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:31.307640" elapsed="1.624346"/>
+</kw>
+<arg>Agachamento com Peso</arg>
+<status status="PASS" start="2026-06-18T09:05:31.306571" elapsed="1.625415"/>
+</kw>
+<kw name="E informa a descricao do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${descricao}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_DESC}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:32.932999" elapsed="0.000514"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:32.935047" level="INFO">Typing text 'Executar agachamento sumo com halteres leves de 2kg.' into text field 'id=descricao'.</msg>
+<arg>${INPUT_DESC}</arg>
+<arg>${descricao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:32.935047" elapsed="1.697866"/>
+</kw>
+<arg>'${descricao}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_DESC}</arg>
+<arg>${descricao}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:32.933513" elapsed="1.699400"/>
+</kw>
+<arg>Executar agachamento sumo com halteres leves de 2kg.</arg>
+<status status="PASS" start="2026-06-18T09:05:32.931986" elapsed="1.700927"/>
+</kw>
+<kw name="E seleciona o nivel de dificuldade">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:34.633936" level="INFO">Selecting options from selection list 'id=dificuldade' by value DIFICIL.</msg>
+<arg>${SELECT_DIF}</arg>
+<arg>${dificuldade}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-18T09:05:34.633424" elapsed="4.065730"/>
+</kw>
+<arg>DIFICIL</arg>
+<status status="PASS" start="2026-06-18T09:05:34.633424" elapsed="4.065730"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:38.699668" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:38.699668" elapsed="2.583117"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:38.699154" elapsed="2.584651"/>
+</kw>
+<kw name="Entao o sistema deve redirecionar para a listagem de exercicios">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LISTA_EXER}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:41.283805" elapsed="2.433721"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:44.222169" level="INFO">Current location contains '/admin/exercicios'.</msg>
+<arg>/admin/exercicios</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:05:43.717526" elapsed="0.504643"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:41.283805" elapsed="2.938364"/>
+</kw>
+<doc>Partição Válida (P2): Verifica que o cadastro é concluído quando
+a dificuldade DIFICIL está selecionada.</doc>
+<status status="PASS" start="2026-06-18T09:05:24.161459" elapsed="20.060710"/>
+</test>
+<test id="s1-t4" name="CT04 - T4: Deve bloquear cadastro se nome estiver em branco com dificuldade definida" line="58">
+<kw name="Acessar a pagina de cadastro de exercicios" type="SETUP">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:44.729253" level="INFO">${URL_ATUAL} = http://localhost:5173/admin/exercicios</msg>
+<var>${URL_ATUAL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-18T09:05:44.224249" elapsed="0.505004"/>
+</kw>
+<if>
+<branch type="IF" condition="'${URL_ATUAL}' != '${URL_CADASTRO}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=exercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:44.729253" elapsed="1.014597"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:45.743850" level="INFO">Clicking element 'id=exercicio'.</msg>
+<arg>id=exercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:45.743850" elapsed="1.051975"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=btnExercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:46.795825" elapsed="1.013302"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:47.809632" level="INFO">Clicking element 'id=btnExercicio'.</msg>
+<arg>id=btnExercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:47.809127" elapsed="1.045906"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:44.729253" elapsed="4.125780"/>
+</branch>
+<status status="PASS" start="2026-06-18T09:05:44.729253" elapsed="4.125780"/>
+</if>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_CADASTRO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:05:48.855033" elapsed="0.504236"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-18T09:05:50.359630" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-18T09:05:49.359269" elapsed="1.000361"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:05:50.359630" elapsed="1.012653"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:44.223715" elapsed="7.148568"/>
+</kw>
+<kw name="Dado que o profissional informa o nome do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:51.373758" elapsed="1.036855"/>
+</kw>
+<arg>'${nome}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_NOME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:51.373420" elapsed="1.037193"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${nome}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:52.410613" elapsed="0.000504"/>
+</kw>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2026-06-18T09:05:51.372283" elapsed="1.038834"/>
+</kw>
+<kw name="E informa a descricao do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${descricao}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_DESC}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:52.411117" elapsed="0.001007"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:52.413635" level="INFO">Typing text 'Instruções do movimento terapêutico.' into text field 'id=descricao'.</msg>
+<arg>${INPUT_DESC}</arg>
+<arg>${descricao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:52.412628" elapsed="1.603677"/>
+</kw>
+<arg>'${descricao}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_DESC}</arg>
+<arg>${descricao}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:05:52.412628" elapsed="1.603677"/>
+</kw>
+<arg>Instruções do movimento terapêutico.</arg>
+<status status="PASS" start="2026-06-18T09:05:52.411117" elapsed="1.605188"/>
+</kw>
+<kw name="E seleciona o nivel de dificuldade">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:54.016305" level="INFO">Selecting options from selection list 'id=dificuldade' by value FACIL.</msg>
+<arg>${SELECT_DIF}</arg>
+<arg>${dificuldade}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-18T09:05:54.016305" elapsed="3.032739"/>
+</kw>
+<arg>FACIL</arg>
+<status status="PASS" start="2026-06-18T09:05:54.016305" elapsed="3.032739"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:05:57.049558" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:05:57.049558" elapsed="2.585384"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:57.049044" elapsed="2.585898"/>
+</kw>
+<kw name="Entao a interface deve reter o envio e permanecer na pagina de cadastro">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:06:00.141366" level="INFO">Current location is 'http://localhost:5173/admin/exercicio/novo'.</msg>
+<arg>${URL_CADASTRO}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-06-18T09:05:59.635470" elapsed="0.505896"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:05:59.635470" elapsed="0.505896"/>
+</kw>
+<doc>Partição Inválida (P1): O campo nome é obrigatório (HTML5 required).
+O formulário deve ser retido mesmo com a dificuldade selecionada.</doc>
+<status status="PASS" start="2026-06-18T09:05:44.222169" elapsed="15.919197"/>
+</test>
+<test id="s1-t5" name="CT05 - T4: Deve bloquear cadastro se descricao estiver em branco com dificuldade definida" line="68">
+<kw name="Acessar a pagina de cadastro de exercicios" type="SETUP">
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:06:00.647021" level="INFO">${URL_ATUAL} = http://localhost:5173/admin/exercicio/novo</msg>
+<var>${URL_ATUAL}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2026-06-18T09:06:00.142955" elapsed="0.504066"/>
+</kw>
+<if>
+<branch type="IF" condition="'${URL_ATUAL}' != '${URL_CADASTRO}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=exercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-06-18T09:06:00.647021" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>id=exercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-18T09:06:00.647021" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=btnExercicio</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2026-06-18T09:06:00.647021" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>id=btnExercicio</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-18T09:06:00.647021" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-06-18T09:06:00.647021" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2026-06-18T09:06:00.647021" elapsed="0.000000"/>
+</if>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_CADASTRO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-06-18T09:06:00.648031" elapsed="0.503755"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-18T09:06:02.152431" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-18T09:06:01.152271" elapsed="1.000160"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${INPUT_NOME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T09:06:02.152431" elapsed="1.014590"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:06:00.141898" elapsed="3.025123"/>
+</kw>
+<kw name="Dado que o profissional informa o nome do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${nome}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_NOME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:06:03.167531" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:06:03.168544" level="INFO">Typing text 'Exercício de Equilíbrio' into text field 'id=nome'.</msg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:06:03.168544" elapsed="1.605155"/>
+</kw>
+<arg>'${nome}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_NOME}</arg>
+<arg>${nome}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:06:03.167531" elapsed="1.606168"/>
+</kw>
+<arg>Exercício de Equilíbrio</arg>
+<status status="PASS" start="2026-06-18T09:06:03.167021" elapsed="1.606678"/>
+</kw>
+<kw name="E informa a descricao do exercicio">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${INPUT_DESC}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:06:04.775017" elapsed="1.022165"/>
+</kw>
+<arg>'${descricao}' == '${EMPTY}'</arg>
+<arg>Clear Element Text</arg>
+<arg>${INPUT_DESC}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:06:04.774215" elapsed="1.022967"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${descricao}' != '${EMPTY}'</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_DESC}</arg>
+<arg>${descricao}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-06-18T09:06:05.797182" elapsed="0.001011"/>
+</kw>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2026-06-18T09:06:04.774215" elapsed="1.023978"/>
+</kw>
+<kw name="E seleciona o nivel de dificuldade">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:06:05.798193" level="INFO">Selecting options from selection list 'id=dificuldade' by value MODERADO.</msg>
+<arg>${SELECT_DIF}</arg>
+<arg>${dificuldade}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-18T09:06:05.798193" elapsed="4.053882"/>
+</kw>
+<arg>MODERADO</arg>
+<status status="PASS" start="2026-06-18T09:06:05.798193" elapsed="4.053882"/>
+</kw>
+<kw name="Quando solicitar o salvamento">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:06:09.852075" level="INFO">Clicking button 'id=btnSalvar'.</msg>
+<arg>${BTN_SALVAR}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T09:06:09.852075" elapsed="2.582631"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:06:09.852075" elapsed="2.582631"/>
+</kw>
+<kw name="Entao a interface deve reter o envio e permanecer na pagina de cadastro">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2026-06-18T09:06:12.938707" level="INFO">Current location is 'http://localhost:5173/admin/exercicio/novo'.</msg>
+<arg>${URL_CADASTRO}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2026-06-18T09:06:12.435216" elapsed="0.503491"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:06:12.434706" elapsed="0.504001"/>
+</kw>
+<doc>Partição Inválida (P1): O campo descrição é obrigatório (HTML5 required).
+O formulário deve ser retido mesmo com a dificuldade selecionada.</doc>
+<status status="PASS" start="2026-06-18T09:06:00.141898" elapsed="12.796809"/>
+</test>
+<kw name="E fecha o navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-18T09:06:12.939726" elapsed="2.598913"/>
+</kw>
+<status status="PASS" start="2026-06-18T09:06:12.939213" elapsed="2.599426"/>
+</kw>
+<doc>Suite de testes de interface para o T4 — Definição de Nível de Dificuldade no Cadastro de Exercícios.
+Foco: Validar que o campo de dificuldade é obrigatório para salvar um exercício.
+Responsável: Douglas S.</doc>
+<status status="PASS" start="2026-06-18T09:04:23.289535" elapsed="112.249104"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="testeT4 visual" id="s1" pass="5" fail="0" skip="0">testeT4 visual</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-06-18T09:04:30.525684" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:04:30.525684" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:04:30.525684" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+<msg time="2026-06-18T09:04:30.525684" level="WARN">Cache folder (C:\Users\eduardo.barros\.cache\selenium) cannot be created: Acesso negado. (os error 5)</msg>
+</errors>
+</robot>
