@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.14 on win32)" generated="2026-06-18T20:24:10.078288" rpa="false" schemaversion="5">
+<suite id="s1" name="T29" source="C:\Users\Dod\Documents\GitHub\Vida-Ativa\frontend\tests\T29\T29.robot">
+<kw name="Abrir Navegador e Logar Idoso" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:10.439971" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("--incognito")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-18T20:24:10.439735" elapsed="0.978781"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-18T20:24:11.418983" elapsed="0.025335"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T20:24:11.444497" elapsed="0.013997"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:11.458874" level="INFO">Typing text 'eminem@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>eminem@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T20:24:11.458670" elapsed="0.085344"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:11.544961" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-18T20:24:11.567931" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=senha</arg>
+<arg>123456</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T20:24:11.544210" elapsed="0.059008"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:11.603575" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>id=btnlogin</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T20:24:11.603377" elapsed="0.054362"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=nomeApp</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T20:24:11.657919" elapsed="1.242709"/>
+</kw>
+<status status="PASS" start="2026-06-18T20:24:10.439150" elapsed="2.461622"/>
+</kw>
+<test id="s1-t1" name="CT07 - Deve validar feedback de treino finalizado (T29)" line="12">
+<kw name="Dado que o idoso acessa a dashboard">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Painel Vida Ativa</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-18T20:24:12.901774" elapsed="0.215699"/>
+</kw>
+<status status="PASS" start="2026-06-18T20:24:12.901525" elapsed="0.216056"/>
+</kw>
+<kw name="E inicia e conclui um treino">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:13.118667" level="INFO">Clicking element 'xpath=//*[contains(text(), 'Ver Exercícios')]'.</msg>
+<arg>xpath=//*[contains(text(), 'Ver Exercícios')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T20:24:13.118487" elapsed="0.052492"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>xpath=//*[contains(text(), 'Ver Exercícios')]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-06-18T20:24:13.118103" elapsed="0.053023"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:13.172085" level="INFO">Clicking element 'xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]'.</msg>
+<msg time="2026-06-18T20:24:13.238664" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-18T20:24:13.238884" level="FAIL">Element with locator 'xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]' not found.</msg>
+<arg>xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-18T20:24:13.171839" elapsed="0.072671">Element with locator 'xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]' not found.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:14.245139" level="INFO">Clicking element 'xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]'.</msg>
+<msg time="2026-06-18T20:24:14.295133" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-18T20:24:14.295299" level="FAIL">Element with locator 'xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]' not found.</msg>
+<arg>xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-18T20:24:14.244893" elapsed="0.051759">Element with locator 'xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]' not found.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:15.297606" level="INFO">Clicking element 'xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]'.</msg>
+<arg>xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T20:24:15.297337" elapsed="0.046132"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>xpath=//*[contains(text(), 'Iniciar Este Treino Agora')]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-06-18T20:24:13.171342" elapsed="2.172284"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:15.344516" level="INFO">Clicking element 'xpath=//button[contains(text(), 'Concluir Treino')]'.</msg>
+<arg>xpath=//button[contains(text(), 'Concluir Treino')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T20:24:15.344325" elapsed="0.041401"/>
+</kw>
+<arg>10x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>xpath=//button[contains(text(), 'Concluir Treino')]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-06-18T20:24:15.343838" elapsed="0.041987"/>
+</kw>
+<status status="PASS" start="2026-06-18T20:24:13.117874" elapsed="2.268017"/>
+</kw>
+<kw name="E seleciona o nivel de esforco">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=feedback</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T20:24:15.386504" elapsed="0.020776"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:15.407645" level="INFO">Selecting options from selection list 'id=feedback' by value MODERADO.</msg>
+<arg>id=feedback</arg>
+<arg>${esforco}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-18T20:24:15.407427" elapsed="0.025644"/>
+</kw>
+<arg>MODERADO</arg>
+<status status="PASS" start="2026-06-18T20:24:15.386232" elapsed="0.046939"/>
+</kw>
+<kw name="Quando solicitar o salvamento do feedback">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:15.433892" level="INFO">Clicking element 'xpath=//*[contains(text(), 'Salvar e Finalizar Treino')]'.</msg>
+<arg>xpath=//*[contains(text(), 'Salvar e Finalizar Treino')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T20:24:15.433694" elapsed="0.063434"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2026-06-18T20:24:15.497513" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2026-06-18T20:24:15.497323" elapsed="0.507067"/>
+</kw>
+<status status="PASS" start="2026-06-18T20:24:15.433460" elapsed="0.571070"/>
+</kw>
+<kw name="Entao o sistema deve redirecionar para o historico">
+<kw name="Wait Until Location Contains" owner="SeleniumLibrary">
+<arg>/historico</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-06-18T20:24:16.005077" elapsed="0.009591"/>
+</kw>
+<status status="PASS" start="2026-06-18T20:24:16.004832" elapsed="0.009970"/>
+</kw>
+<status status="PASS" start="2026-06-18T20:24:12.900878" elapsed="3.114171"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-18T20:24:16.015754" elapsed="2.199479"/>
+</kw>
+<status status="PASS" start="2026-06-18T20:24:10.080493" elapsed="8.134853"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="T29" id="s1" pass="1" fail="0" skip="0">T29</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
