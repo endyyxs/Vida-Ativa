@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.12.2 on win32)" generated="2026-06-18T01:19:06.560562" rpa="false" schemaversion="5">
+<suite id="s1" name="testeT21" source="C:\Users\COMPUTADOR\OneDrive\Documentos\projeto\Vida-Ativa\frontend\tests\T21\testeT21.robot">
+<test id="s1-t1" name="CT01: Validar Acesso a Dashboard Para Novo Usuario" line="31">
+<kw name="Abrir Navegador Na Tela De Login" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-18T01:19:06.864838" level="INFO">Opening browser 'edge' to base url 'http://localhost:5173'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-18T01:19:06.864838" elapsed="1.815752"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-18T01:19:08.681590" elapsed="0.047043"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T01:19:08.728633" elapsed="0.048074"/>
+</kw>
+<status status="PASS" start="2026-06-18T01:19:06.864838" elapsed="1.911869"/>
+</kw>
+<kw name="Fazer Login No Sistema">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T01:19:08.777708" level="INFO">Typing text 'antonio0@yahoo.com' into text field 'id=email'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${email_usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T01:19:08.776707" elapsed="0.175160"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T01:19:08.951867" level="INFO">Typing text 'antonio' into text field 'id=senha'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha_usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T01:19:08.951867" elapsed="0.068061"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T01:19:09.019928" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T01:19:09.019928" elapsed="0.105095"/>
+</kw>
+<arg>${USER_NOVO}</arg>
+<arg>${SENHA_NOVO}</arg>
+<status status="PASS" start="2026-06-18T01:19:08.776707" elapsed="0.348316"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_DASHBOARD}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-06-18T01:19:09.125023" elapsed="1.251138"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TITULO_DASHBOARD}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T01:19:10.376161" elapsed="0.431391"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-18T01:19:10.807552" elapsed="2.138943"/>
+</kw>
+<doc>Testa se o novo usuário faz login e acessa o painel com sucesso.</doc>
+<status status="PASS" start="2026-06-18T01:19:06.863837" elapsed="6.082658"/>
+</test>
+<test id="s1-t2" name="CT02: Validar Tela Meu Progresso Vazia Para Novo Usuario" line="38">
+<kw name="Abrir Navegador Na Tela De Login" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-18T01:19:12.948496" level="INFO">Opening browser 'edge' to base url 'http://localhost:5173'.</msg>
+<arg>${URL_LOGIN}</arg>
+<arg>${NAVEGADOR}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-18T01:19:12.948496" elapsed="1.137034"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-18T01:19:14.085530" elapsed="0.029027"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CAMPO_EMAIL}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T01:19:14.115557" elapsed="0.015016"/>
+</kw>
+<status status="PASS" start="2026-06-18T01:19:12.947498" elapsed="1.183075"/>
+</kw>
+<kw name="Fazer Login No Sistema">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T01:19:14.131572" level="INFO">Typing text 'antonio0@yahoo.com' into text field 'id=email'.</msg>
+<arg>${CAMPO_EMAIL}</arg>
+<arg>${email_usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T01:19:14.131572" elapsed="0.125113"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T01:19:14.257686" level="INFO">Typing text 'antonio' into text field 'id=senha'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${senha_usuario}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T01:19:14.257686" elapsed="0.058053"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T01:19:14.315739" level="INFO">Clicking button 'id=btnlogin'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T01:19:14.315739" elapsed="0.054049"/>
+</kw>
+<arg>${USER_NOVO}</arg>
+<arg>${SENHA_NOVO}</arg>
+<status status="PASS" start="2026-06-18T01:19:14.130573" elapsed="0.239215"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TITULO_DASHBOARD}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T01:19:14.370790" elapsed="0.627570"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LINK_MEU_PROGRESSO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T01:19:14.998360" elapsed="0.009007"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-18T01:19:15.007367" level="INFO">Clicking element 'xpath=//a[@href="/historico" and text()="Meu Progresso"]'.</msg>
+<arg>${LINK_MEU_PROGRESSO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T01:19:15.007367" elapsed="0.053049"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>${URL_PROGRESSO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2026-06-18T01:19:15.061417" elapsed="0.004004"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MENSAGEM_VAZIA}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T01:19:15.065421" elapsed="1.247132"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${BOTAO_VOLTAR_INICIO}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-18T01:19:16.313555" elapsed="0.010008"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-18T01:19:16.324563" elapsed="2.115923"/>
+</kw>
+<doc>Testa se a tela de histórico exibe a mensagem correta de estado vazio.</doc>
+<status status="PASS" start="2026-06-18T01:19:12.947498" elapsed="5.492988"/>
+</test>
+<doc>Suite de testes para validar a dashboard e a tela de progresso para novos usuários.</doc>
+<status status="PASS" start="2026-06-18T01:19:06.562564" elapsed="11.879924"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="testeT21" id="s1" pass="2" fail="0" skip="0">testeT21</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -5,22 +5,19 @@ Test Setup        Abrir Navegador Na Tela De Login
 Test Teardown   Close Browser
 
 *** Variables ***
-#URLs
 ${URL_LOGIN}      http://localhost:5173
 ${URL_AVISO}      http://localhost:5173/quiz
 ${URL_TREINOS}    http://localhost:5173/dashboard
 ${NAVEGADOR}      edge
 
-#Dados de login
 ${USUARIO1}   antonio0@yahoo.com
 ${USUARIO2}   antonio2@yahoo.com
 ${SENHA}      antonio
 
-#Campos de login
 ${CAMPO_EMAIL}   id=email
 ${CAMPO_SENHA}   id=senha
 ${BOTAO_ENTRAR}  id=btnlogin
-#campos questionario
+
 ${CHECKBOX_ACEITE}     css=[data-testid="quiz-termo-medico"]
 ${BOTAO_SALVAR}        css=[data-testid="quiz-submit-button"]
 ${MENSAGEM_ERRO}       css=[data-testid="quiz-error-message"]      
@@ -41,7 +38,6 @@ CT02: Validar Acesso Bloqueado com Aceite Invalido
     [Documentation]    Testa a partição inválida usando o segundo usuário.
     Fazer Login No Sistema    ${USUARIO2}    ${SENHA}
     
-    # Não clicamos no checkbox
     Click Button       ${BOTAO_SALVAR}
     
     Location Should Be              ${URL_AVISO}
@@ -60,6 +56,5 @@ Fazer Login No Sistema
     Input Text      ${CAMPO_SENHA}      ${senha_usuario}
     Click Button    ${BOTAO_ENTRAR}
     
-    # Espera o redirecionamento automático acontecer e a tela do aviso carregar
     Wait Until Location Is           ${URL_AVISO}          timeout=5s
     Wait Until Element Is Visible    ${CHECKBOX_ACEITE}    timeout=5s
