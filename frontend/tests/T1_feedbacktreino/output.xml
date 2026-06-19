@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-18T21:06:07.055548" rpa="false" schemaversion="5">
+<suite id="s1" name="Feedbacktreino" source="C:\Users\Usuário\Documents\Vida Ativa\Vida-Ativa\frontend\tests\T1_feedbacktreino\feedbacktreino.robot">
+<test id="s1-t1" name="CT01 - Feedback válido" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-18T21:06:07.583792" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-18T21:06:07.582992" elapsed="3.353655"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-18T21:06:10.938019" elapsed="0.042617"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T21:06:10.982936" level="INFO">Typing text 'analidia123@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>analidia123@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T21:06:10.981830" elapsed="0.287961"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2026-06-18T21:06:11.270841" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg time="2026-06-18T21:06:11.315737" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=senha</arg>
+<arg>12345678</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T21:06:11.270379" elapsed="0.119586"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T21:06:11.390700" level="INFO">Clicking button 'Entrar'.</msg>
+<arg>Entrar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T21:06:11.390360" elapsed="0.102521"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-18T21:06:13.494792" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-18T21:06:11.493377" elapsed="2.001775"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-18T21:06:13.496507" level="INFO">Opening url 'http://localhost:5173/feedback'</msg>
+<arg>http://localhost:5173/feedback</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-18T21:06:13.496028" elapsed="0.160441"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-06-18T21:06:13.657226" level="INFO">Selecting options from selection list 'css:[data-testid="feedback-dificuldade-select"]' by value FACIL.</msg>
+<arg>css:[data-testid="feedback-dificuldade-select"]</arg>
+<arg>FACIL</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-06-18T21:06:13.656872" elapsed="0.108119"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-18T21:06:13.765829" level="INFO">Clicking button 'css:[data-testid="feedback-submit-button"]'.</msg>
+<arg>css:[data-testid="feedback-submit-button"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-18T21:06:13.765366" elapsed="0.129899"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-18T21:06:15.896661" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-18T21:06:13.895784" elapsed="2.001102"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-18T21:06:15.897545" elapsed="2.296082"/>
+</kw>
+<status status="PASS" start="2026-06-18T21:06:07.581334" elapsed="10.612675"/>
+</test>
+<status status="PASS" start="2026-06-18T21:06:07.058319" elapsed="11.136488"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Feedbacktreino" id="s1" pass="1" fail="0" skip="0">Feedbacktreino</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
