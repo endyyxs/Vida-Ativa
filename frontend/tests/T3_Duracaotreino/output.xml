@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.5 on win32)" generated="2026-06-18T21:10:48.185697" rpa="false" schemaversion="5">
+<suite id="s1" name="Duracao Treino" source="C:\Users\Usuário\Documents\Vida Ativa\Vida-Ativa\frontend\tests\T3_Duracaotreino\duracao_treino.robot">
+<test id="s1-t1" name="CT01 - Duração mínima válida" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-18T21:10:48.699895" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/rotinas'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-18T21:10:48.699479" elapsed="2.199098"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-18T21:10:50.901829" elapsed="0.039295"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-18T21:10:50.942622" level="INFO">Typing text '10' into text field 'id=duracao'.</msg>
+<msg time="2026-06-18T21:10:51.074573" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-06-18T21:10:51.074918" level="FAIL">Element with locator 'id=duracao' not found.</msg>
+<arg>id=duracao</arg>
+<arg>10</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2026-06-18T21:10:50.941693" elapsed="0.343981">Element with locator 'id=duracao' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>Salvar</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-06-18T21:10:51.286467" elapsed="0.000105"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2026-06-18T21:10:51.287093" elapsed="0.000102"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2026-06-18T21:10:51.287652" elapsed="0.000084"/>
+</kw>
+<status status="FAIL" start="2026-06-18T21:10:48.697937" elapsed="2.590371">Element with locator 'id=duracao' not found.</status>
+</test>
+<status status="FAIL" start="2026-06-18T21:10:48.188022" elapsed="3.101734"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Duracao Treino" id="s1" pass="0" fail="1" skip="0">Duracao Treino</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
